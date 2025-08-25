@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Trivia Practice V2</title>
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="stylesheet" href="style.css" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#0b0a10" />
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Trivia Practice V2</h1>
+
+      <div class="grid">
+        <div class="wide">
+          <label for="category">Category</label>
+          <select id="category"></select>
+        </div>
+
+        <div>
+          <label for="period">Period</label>
+          <select id="period">
+            <option value="">Any</option>
+            <option value="Ancient">Ancient</option>
+            <option value="Medieval">Medieval</option>
+            <option value="Early Modern">Early Modern</option>
+            <option value="1700s">1700s</option>
+            <option value="1800s">1800s</option>
+            <option value="1900s">1900s</option>
+            <option value="2000s–Present">2000s–Present</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="difficulty">Difficulty</label>
+          <select id="difficulty">
+            <option value="">Any</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="numQuestions">Questions</label>
+          <select id="numQuestions">
+            <option value="5">5</option>
+            <option value="10" selected>10</option>
+            <option value="20">20</option>
+          </select>
+        </div>
+
+        <div class="checkbox-inline">
+          <input id="onlinePool" type="checkbox" checked />
+          <label for="onlinePool">Online pool</label>
+        </div>
+
+        <button id="startBtn" class="primary wide">Start</button>
+        <button id="refreshBtn" class="wide">Refresh</button>
+      </div>
+
+      <div class="meta">
+        <div id="progress">0/0</div>
+        <div id="score">Score: 0 · High: 0</div>
+        <div id="timer">--</div>
+      </div>
+
+      <div id="question" class="q" aria-live="polite">Tap Start to begin.</div>
+      <div id="answers" class="answers"></div>
+      <div id="feedback" class="feedback" aria-live="polite"></div>
+      <button id="nextBtn" class="primary hidden wide">Next Question</button>
+      <div id="summary" class="summary"></div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
